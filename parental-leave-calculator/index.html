@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <title>육아휴직 사용기간 계산기 | 무료 온라인 계산 도구</title>
+    <meta name="description" content="육아휴직 사용기간을 정확히 계산하고 잔여기간을 확인하세요. 분할사용, 일할계산, 잔여기간 모의계산까지 무료로 제공하는 온라인 계산기입니다.">
+    <meta name="keywords" content="육아휴직, 계산기, 사용기간, 잔여기간, 분할사용, 일할계산, 육아휴직급여, 온라인계산기">
+    <meta name="author" content="계산기 플랫폼">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="육아휴직 사용기간 계산기 | 무료 온라인 계산 도구">
+    <meta property="og:description" content="육아휴직 사용기간을 정확히 계산하고 잔여기간을 확인하세요. 분할사용, 일할계산, 잔여기간 모의계산까지 무료로 제공합니다.">
+    <meta property="og:url" content="https://yourdomain.vercel.app/parental-leave-calculator">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="계산기 플랫폼">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="육아휴직 사용기간 계산기">
+    <meta name="twitter:description" content="육아휴직 사용기간을 정확히 계산하고 잔여기간을 확인하세요.">
+    
+    <!-- 구조화된 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "육아휴직 사용기간 계산기",
+        "description": "육아휴직 사용기간을 정확히 계산하고 잔여기간을 확인할 수 있는 무료 온라인 계산기",
+        "url": "https://yourdomain.vercel.app/parental-leave-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "계산기 플랫폼"
+        },
+        "dateModified": "2025-06-29"
+    }
+    </script>
+    
+    <!-- 정규 URL -->
+    <link rel="canonical" href="https://yourdomain.vercel.app/parental-leave-calculator">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/calculators/parental-leave.css">
+</head>
+<body>
+    <!-- 스킵 네비게이션 (접근성) -->
+    <a href="#main-content" class="skip-nav">본문으로 바로가기</a>
+
+    <!-- 헤더 -->
+    <header class="platform-header">
+        <div class="header-container">
+            <a href="/" class="platform-logo">💼 계산기 플랫폼</a>
+            <nav class="main-nav">
+                <a href="/">전체 계산기</a>
+            </nav>
+        </div>
+        <div class="header-container">
+            <nav class="breadcrumb">
+                <a href="/">홈</a> > <a href="/#calculators">계산기</a> > <span>육아휴직 계산기</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="calculator-main" id="main-content">
+        <article class="calculator-container">
+            <!-- SEO 최적화된 헤더 -->
+            <header class="calc-header">
+                <h1>🍼 육아휴직 사용기간 계산기</h1>
+                <p class="subtitle">육아휴직 사용기간을 정확히 계산하고 잔여기간을 확인하세요</p>
+                
+                <section class="features">
+                    <h2>✨ 주요 기능</h2>
+                    <ul>
+                        <li><strong>정확한 계산:</strong> 고용노동부 기준 DATEDIF 함수 적용</li>
+                        <li><strong>분할사용 지원:</strong> 최대 3회까지 나누어 사용 가능</li>
+                        <li><strong>실시간 검증:</strong> 기간 겹침 및 오류 자동 감지</li>
+                        <li><strong>잔여기간 계산:</strong> 1년/1년 6개월 기준 자동 계산</li>
+                        <li><strong>모의계산:</strong> 향후 사용 계획 시뮬레이션</li>
+                    </ul>
+                </section>
+            </header>
+
+            <!-- 계산 섹션 -->
+            <section class="calc-section">
+                <h2>육아휴직 사용기간 입력</h2>
+                
+                <div id="periodsContainer">
+                    <div class="period-group" data-period="1">
+                        <span class="period-label">1회차</span>
+                        <div class="form-group">
+                            <label for="start-date-1">시작일</label>
+                            <input type="date" id="start-date-1" class="start-date" required aria-describedby="start-date-help">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date-1">종료일</label>
+                            <input type="date" id="end-date-1" class="end-date" required aria-describedby="end-date-help">
+                        </div>
+                        <button type="button" class="remove-btn" onclick="removePeriod(this)" style="display: none;" aria-label="1회차 기간 삭제">삭제</button>
+                    </div>
+                </div>
+
+                <button type="button" class="add-period-btn" onclick="addPeriod()" aria-label="분할사용 기간 추가">+ 회차 추가 (분할사용)</button>
+                <div class="overlap-warning" id="overlapWarning" role="alert">기간이 겹치는 회차가 있습니다. 날짜를 확인해주세요.</div>
+                <button type="button" class="calc-btn primary" onclick="calculatePeriods()" aria-describedby="calculation-help">📊 사용기간 계산하기</button>
+                <div id="calculation-help" style="display: none;">입력된 기간을 바탕으로 총 사용기간과 잔여기간을 계산합니다.</div>
+            </section>
+
+            <section class="calc-section simulation-section">
+                <h2>잔여기간 모의계산</h2>
+                
+                <div id="remainingPeriodResult" style="display: none;">
+                    <div class="info-note">
+                        <p><strong>💡 추가 안내:</strong> 위 계산은 참고용이며, 실제 승인은 관련 기관의 심사를 통해 결정됩니다.</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="simulationStartDate">예상 시작일 (모의계산용)</label>
+                    <input type="date" id="simulationStartDate" aria-describedby="simulation-help">
+                    <div id="simulation-help" style="font-size: 12px; color: #718096; margin-top: 5px;">잔여기간을 이용한 향후 육아휴직 계획을 시뮬레이션합니다.</div>
+                </div>
+                
+                <button type="button" class="calc-btn secondary" onclick="calculateSimulation()">📅 잔여기간 모의계산</button>
+            </section>
+
+            <!-- 결과 섹션 -->
+            <section class="result-container" id="resultContainer" role="region" aria-labelledby="result-title">
+                <h2 id="result-title" style="display: none;">계산 결과</h2>
+                <div class="result-summary">
+                    <div class="result-card">
+                        <h3>총 사용기간</h3>
+                        <div class="value" id="totalPeriod" aria-live="polite">0개월</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>잔여기간 요약</h3>
+                        <div class="value" id="remainingSummary" style="font-size: 18px; line-height: 1.4;" aria-live="polite">-</div>
+                    </div>
+                </div>
+
+                <div class="info-note">
+                    <p><strong>💡 안내:</strong> 육아휴직은 최대 1년(12개월)까지 사용 가능하며, 
+                    아빠 육아휴직 등 특별한 경우 1년 6개월(18개월)까지 확장 가능합니다.</p>
+                </div>
+
+                <div id="simulationDetail" style="display: none;">
+                    <h3>📅 잔여기간 상세</h3>
+                    <div class="detail-box">
+                        <div id="simulationDetailContent" aria-live="polite"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 계산 방법 안내 -->
+            <section class="info-box">
+                <h3>📋 계산 방법 안내</h3>
+                <ul>
+                    <li><strong>개월수 계산:</strong> DATEDIF 함수로 시작일부터 종료일+1까지의 개월수</li>
+                    <li><strong>일수 계산:</strong> 개월수로 나누어 떨어지지 않는 잔여 일수</li>
+                    <li><strong>일할계산:</strong> 잔여일수를 해당월 일수로 나누어 소수점 계산</li>
+                    <li><strong>합산기간:</strong> 개월수 + 일할계산값 (소수점 3자리에서 내림)</li>
+                    <li><strong>1년 한도:</strong> 총 합산기간이 12개월을 초과하면 "1년 초과" 표시</li>
+                    <li><strong>분할사용:</strong> 육아휴직을 여러 번 나누어 사용한 경우 회차별로 입력 (법적으로 3회까지 허용)</li>
+                </ul>
+            </section>
+
+            <!-- 관련 계산기 -->
+            <section class="related-calculators">
+                <h3>🔗 관련 계산기</h3>
+                <div class="calculator-grid">
+                    <a href="/annual-leave-calculator" class="calculator-card">
+                        <h4>🏖️ 연차 계산기</h4>
+                        <p>연차 발생일수와 잔여 연차를 계산하세요</p>
+                    </a>
+                    <a href="/severance-pay-calculator" class="calculator-card">
+                        <h4>💰 퇴직금 계산기</h4>
+                        <p>퇴직금과 퇴직소득세를 계산하세요</p>
+                    </a>
+                    <a href="/unemployment-benefit-calculator" class="calculator-card">
+                        <h4>📋 실업급여 계산기</h4>
+                        <p>실업급여 수급기간과 금액을 계산하세요</p>
+                    </a>
+                    <a href="/maternity-leave-calculator" class="calculator-card">
+                        <h4>🤱 출산휴가 계산기</h4>
+                        <p>출산전후휴가 기간을 계산하세요</p>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="platform-footer">
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="/about">서비스 소개</a>
+                <a href="/privacy">개인정보처리방침</a>
+                <a href="/terms">이용약관</a>
+                <a href="/contact">문의하기</a>
+                <a href="/sitemap">사이트맵</a>
+            </nav>
+            <div class="footer-info">
+                <p>© 2025 계산기 플랫폼. All rights reserved.</p>
+                <p>본 계산기는 참고용으로 제공되며, 실제 법적 효력과는 차이가 있을 수 있습니다.</p>
+                <p>정확한 정보는 관련 기관에 문의하시기 바랍니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/common.js"></script>
+    <script src="/js/ui-components.js"></script>
+    <script src="/js/calculators/parental-leave.js"></script>
+</body>
+</html>

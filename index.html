@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <title>계산기 플랫폼 | 무료 온라인 계산 도구</title>
+    <meta name="description" content="육아휴직, 연차, 퇴직금 등 다양한 노무 계산기를 무료로 제공하는 온라인 플랫폼입니다. 정확하고 빠른 계산을 지금 시작하세요.">
+    <meta name="keywords" content="계산기, 육아휴직계산기, 연차계산기, 퇴직금계산기, 노무계산기, 온라인계산기">
+    <meta name="author" content="계산기 플랫폼">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="계산기 플랫폼 | 무료 온라인 계산 도구">
+    <meta property="og:description" content="육아휴직, 연차, 퇴직금 등 다양한 노무 계산기를 무료로 제공하는 온라인 플랫폼입니다.">
+    <meta property="og:url" content="https://yourdomain.vercel.app/">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- 정규 URL -->
+    <link rel="canonical" href="https://yourdomain.vercel.app/">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    
+    <style>
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: -30px -30px 40px -30px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .calculator-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .calculator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .calculator-card h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .calculator-card p {
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .calculator-card .features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .calculator-card .features li {
+            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .calculator-card .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .calculator-card.available {
+            cursor: pointer;
+        }
+        
+        .calculator-card.coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .calculator-card.coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ffd700;
+            color: #2d3748;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .stats-section {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item h3 {
+            color: #667eea;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: #4a5568;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 20px;
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            
+            .hero-section p {
+                font-size: 16px;
+            }
+            
+            .calculator-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .calculator-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="platform-header">
+        <div class="header-container">
+            <a href="/" class="platform-logo">💼 계산기 플랫폼</a>
+            <nav class="main-nav">
+                <a href="#calculators">계산기</a>
+                <a href="#about">소개</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="calculator-main">
+        <div class="calculator-container">
+            <!-- 히어로 섹션 -->
+            <section class="hero-section">
+                <h1>🧮 스마트 계산기 플랫폼</h1>
+                <p>업무에 필요한 다양한 계산을 쉽고 정확하게!<br>
+                복잡한 노무 계산을 몇 초 만에 완료하세요.</p>
+            </section>
+
+            <!-- 계산기 목록 -->
+            <section id="calculators">
+                <h2 style="text-align: center; color: #2d3748; margin-bottom: 40px; font-size: 32px;">
+                    🎯 제공 서비스
+                </h2>
+                
+                <div class="calculator-grid">
+                    <!-- 육아휴직 계산기 (완성) -->
+                    <a href="/parental-leave-calculator/" class="calculator-card available">
+                        <h2>🍼 육아휴직 계산기</h2>
+                        <p>육아휴직 사용기간과 잔여기간을 정확히 계산하세요</p>
+                        <ul class="features">
+                            <li>정확한 기간 계산 (DATEDIF 방식)</li>
+                            <li>분할사용 지원 (최대 3회)</li>
+                            <li>실시간 겹침 검증</li>
+                            <li>잔여기간 모의계산</li>
+                            <li>1년/1년 6개월 기준 자동 계산</li>
+                        </ul>
+                    </a>
+
+                    <!-- 연차 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>🏖️ 연차 계산기</h2>
+                        <p>연차 발생일수와 잔여 연차를 자동으로 계산하세요</p>
+                        <ul class="features">
+                            <li>입사일 기준 연차 발생 계산</li>
+                            <li>사용 연차 차감</li>
+                            <li>잔여 연차 확인</li>
+                            <li>연차 사용 계획 수립</li>
+                        </ul>
+                    </div>
+
+                    <!-- 퇴직금 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>💰 퇴직금 계산기</h2>
+                        <p>퇴직금과 퇴직소득세를 정확히 계산하세요</p>
+                        <ul class="features">
+                            <li>근속기간별 퇴직금 계산</li>
+                            <li>퇴직소득세 자동 계산</li>
+                            <li>실수령액 확인</li>
+                            <li>세액 절세 팁 제공</li>
+                        </ul>
+                    </div>
+
+                    <!-- 실업급여 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>📋 실업급여 계산기</h2>
+                        <p>실업급여 수급기간과 금액을 계산하세요</p>
+                        <ul class="features">
+                            <li>수급 자격 확인</li>
+                            <li>일일 지급액 계산</li>
+                            <li>총 수급기간 계산</li>
+                            <li>신청 절차 가이드</li>
+                        </ul>
+                    </div>
+
+                    <!-- 출산휴가 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>🤱 출산휴가 계산기</h2>
+                        <p>출산전후휴가 기간과 급여를 계산하세요</p>
+                        <ul class="features">
+                            <li>출산전후휴가 기간 계산</li>
+                            <li>출산급여 계산</li>
+                            <li>배우자 출산휴가</li>
+                            <li>신청서류 가이드</li>
+                        </ul>
+                    </div>
+
+                    <!-- 근로시간 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>⏰ 근로시간 계산기</h2>
+                        <p>근로시간과 연장근로수당을 계산하세요</p>
+                        <ul class="features">
+                            <li>일일/주간 근로시간 계산</li>
+                            <li>연장/야간/휴일근로 구분</li>
+                            <li>수당 자동 계산</li>
+                            <li>근로기준법 준수 확인</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 통계 섹션 -->
+            <section class="stats-section" id="about">
+                <h2 style="color: #2d3748; margin-bottom: 20px;">💎 왜 우리 플랫폼인가요?</h2>
+                <p style="color: #718096; font-size: 18px;">정확하고 빠른 계산으로 여러분의 업무를 도와드립니다</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>무료 서비스</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>언제든 이용 가능</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>계산 정확도</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>모바일</h3>
+                        <p>반응형 지원</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="platform-footer">
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="/about">서비스 소개</a>
+                <a href="/privacy">개인정보처리방침</a>
+                <a href="/terms">이용약관</a>
+                <a href="/contact">문의하기</a>
+            </nav>
+            <div class="footer-info">
+                <p>© 2025 계산기 플랫폼. All rights reserved.</p>
+                <p>본 계산기는 참고용으로 제공되며, 실제 법적 효력과는 차이가 있을 수 있습니다.</p>
+                <p>정확한 정보는 관련 기관에 문의하시기 바랍니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/common.js"></script>
+</body>
+</html>
