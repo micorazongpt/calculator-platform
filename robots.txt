@@ -1,16 +1,8 @@
 User-agent: *
 Allow: /
 
-# AI노무사 주요 페이지들
+# 주요 페이지들
 Allow: /parental-leave-calculator/
-Allow: /annual-leave-calculator/
-Allow: /severance-pay-calculator/
-Allow: /unemployment-benefit-calculator/
-Allow: /maternity-leave-calculator/
-Allow: /working-hours-calculator/
-Allow: /employment-rules-review/
-
-# 정적 리소스
 Allow: /css/
 Allow: /js/
 Allow: /images/
@@ -19,25 +11,9 @@ Allow: /images/
 Disallow: /api/
 Disallow: /.git/
 Disallow: /node_modules/
-Disallow: /.vercel/
-Disallow: /build/
-Disallow: /dist/
 
-# AI노무사 사이트맵 위치
+# 사이트맵 위치
 Sitemap: https://yourdomain.vercel.app/sitemap.xml
 
-# 크롤링 속도 제한 (AI노무사 서버 보호)
-Crawl-delay: 1
-
-# 검색엔진 특별 설정
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Naverbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Yeti
-Allow: /
+# 크롤링 속도 제한 (선택사항)
 Crawl-delay: 1
