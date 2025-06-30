@@ -5,200 +5,533 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 메타 태그 -->
-    <title>AI 육아휴직 계산기 | AI노무사 - 스마트한 노무계산</title>
-    <meta name="description" content="AI노무사의 스마트 육아휴직 계산기로 사용기간과 잔여기간을 정확히 계산하세요. AI 기술 기반의 분할사용, 일할계산, 잔여기간 모의계산까지 무료 제공.">
-    <meta name="keywords" content="AI노무사, AI육아휴직계산기, 육아휴직, 사용기간, 잔여기간, 분할사용, 일할계산, 스마트계산기">
+    <title>AI노무사 | AI스마트노무계산기 & AI스마트취업규칙검토 - 무료 AI 노무 서비스</title>
+    <meta name="description" content="AI노무사에서 제공하는 스마트한 노무 계산기와 취업규칙 검토 서비스입니다. 육아휴직, 연차, 퇴직금 계산부터 AI 기반 취업규칙 분석까지 AI 기술로 정확하고 빠르게 처리합니다.">
+    <meta name="keywords" content="AI노무사, 노무계산기, 육아휴직계산기, 연차계산기, 퇴직금계산기, 취업규칙검토, AI취업규칙분석, 법령준수체크, 노무관리, 인공지능">
     <meta name="author" content="AI노무사">
-    <meta name="robots" content="index, follow">
     
-    <!-- Open Graph 메타 태그 -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AI 육아휴직 계산기 | AI노무사 - 스마트한 노무계산">
-    <meta property="og:description" content="AI노무사의 스마트 육아휴직 계산기로 사용기간과 잔여기간을 정확히 계산하세요. AI 기술로 분할사용, 일할계산까지 완벽 지원.">
-    <meta property="og:url" content="https://yourdomain.vercel.app/parental-leave-calculator">
+    <meta property="og:title" content="AI노무사 | AI스마트노무계산기 & AI스마트취업규칙검토">
+    <meta property="og:description" content="AI노무사에서 제공하는 스마트한 노무 계산기와 취업규칙 검토 서비스입니다. AI 기술로 정확하고 빠른 노무 업무를 경험하세요.">
+    <meta property="og:url" content="https://yourdomain.vercel.app/">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="AI노무사">
-    
-    <!-- Twitter Card 메타 태그 -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI 육아휴직 계산기 | AI노무사">
-    <meta name="twitter:description" content="AI 기술로 육아휴직 사용기간과 잔여기간을 정확히 계산하세요.">
-    
-    <!-- 구조화된 데이터 (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "AI 육아휴직 계산기",
-        "description": "AI노무사에서 제공하는 스마트 육아휴직 계산기로 사용기간과 잔여기간을 정확히 계산할 수 있는 무료 AI 서비스",
-        "url": "https://yourdomain.vercel.app/parental-leave-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "KRW"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "AI노무사"
-        },
-        "dateModified": "2025-06-29"
-    }
-    </script>
     
     <!-- 정규 URL -->
-    <link rel="canonical" href="https://yourdomain.vercel.app/parental-leave-calculator">
+    <link rel="canonical" href="https://yourdomain.vercel.app/">
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/calculators/parental-leave.css">
+    
+    <style>
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: -30px -30px 40px -30px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 서비스 탭 스타일 */
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .service-tab {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-tab:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .service-tab.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 서비스 섹션 전환 */
+        .service-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .service-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .calculator-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .calculator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .calculator-card h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .calculator-card p {
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .calculator-card .features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .calculator-card .features li {
+            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .calculator-card .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .calculator-card.available {
+            cursor: pointer;
+        }
+        
+        .calculator-card.coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .calculator-card.coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ffd700;
+            color: #2d3748;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* 취업규칙검토 카드 스타일 */
+        .employment-rules-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .employment-rules-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+        
+        .employment-rules-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: #38a169;
+        }
+        
+        .employment-rules-card h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .employment-rules-card p {
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .employment-rules-card .features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .employment-rules-card .features li {
+            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .employment-rules-card .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .stats-section {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item h3 {
+            color: #667eea;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: #4a5568;
+            font-size: 16px;
+        }
+        
+        /* 섹션 구분자 */
+        .section-divider {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: '';
+            display: inline-block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+        
+        .section-divider::after {
+            content: '';
+            display: inline-block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 20px;
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            
+            .hero-section p {
+                font-size: 16px;
+            }
+            
+            .service-tabs {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .service-tab {
+                width: 100%;
+                max-width: 300px;
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+            
+            .calculator-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .calculator-card, .employment-rules-card {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- 스킵 네비게이션 (접근성) -->
-    <a href="#main-content" class="skip-nav">본문으로 바로가기</a>
-
     <!-- 헤더 -->
     <header class="platform-header">
         <div class="header-container">
             <a href="/" class="platform-logo">🤖 AI노무사</a>
             <nav class="main-nav">
-                <a href="/">전체 계산기</a>
-            </nav>
-        </div>
-        <div class="header-container">
-            <nav class="breadcrumb">
-                <a href="/">홈</a> > <a href="/#calculators">AI스마트계산기</a> > <span>AI 육아휴직 계산기</span>
+                <a href="#calculators">계산기</a>
+                <a href="#employment-rules">취업규칙검토</a>
+                <a href="#about">소개</a>
             </nav>
         </div>
     </header>
 
     <!-- 메인 콘텐츠 -->
-    <main class="calculator-main" id="main-content">
-        <article class="calculator-container">
-            <!-- SEO 최적화된 헤더 -->
-            <header class="calc-header">
-                <h1>🍼 AI 육아휴직 계산기</h1>
-                <p class="subtitle">AI 기술로 육아휴직 사용기간을 정확히 계산하고 잔여기간을 스마트하게 확인하세요</p>
+    <main class="calculator-main">
+        <div class="calculator-container">
+            <!-- 히어로 섹션 -->
+            <section class="hero-section">
+                <h1>🤖 AI노무사</h1>
+                <p>AI스마트노무계산기와 AI스마트취업규칙검토로 복잡한 노무업무를 간단하게!<br>
+                인공지능 기술로 정확하고 빠른 계산과 분석을 경험하세요.</p>
                 
-                <section class="features">
-                    <h2>✨ AI 스마트 기능</h2>
-                    <ul>
-                        <li><strong>AI 정밀 계산:</strong> 고용노동부 기준 DATEDIF 함수 AI 적용</li>
-                        <li><strong>스마트 분할사용:</strong> 최대 3회까지 나누어 사용 AI 분석</li>
-                        <li><strong>실시간 AI 검증:</strong> 기간 겹침 및 오류 AI 자동 감지</li>
-                        <li><strong>AI 잔여기간 계산:</strong> 1년/1년 6개월 기준 AI 자동 계산</li>
-                        <li><strong>AI 모의계산:</strong> 향후 사용 계획 AI 시뮬레이션</li>
-                    </ul>
-                </section>
-            </header>
-
-            <!-- 계산 섹션 -->
-            <section class="calc-section">
-                <h2>육아휴직 사용기간 입력</h2>
-                
-                <div id="periodsContainer">
-                    <div class="period-group" data-period="1">
-                        <span class="period-label">1회차</span>
-                        <div class="form-group">
-                            <label for="start-date-1">시작일</label>
-                            <input type="date" id="start-date-1" class="start-date" required aria-describedby="start-date-help">
-                        </div>
-                        <div class="form-group">
-                            <label for="end-date-1">종료일</label>
-                            <input type="date" id="end-date-1" class="end-date" required aria-describedby="end-date-help">
-                        </div>
-                        <button type="button" class="remove-btn" onclick="removePeriod(this)" style="display: none;" aria-label="1회차 기간 삭제">삭제</button>
-                    </div>
-                </div>
-
-                <button type="button" class="add-period-btn" onclick="addPeriod()" aria-label="분할사용 기간 추가">+ 회차 추가 (분할사용)</button>
-                <div class="overlap-warning" id="overlapWarning" role="alert">기간이 겹치는 회차가 있습니다. 날짜를 확인해주세요.</div>
-                <button type="button" class="calc-btn primary" onclick="calculatePeriods()" aria-describedby="calculation-help">🤖 AI 사용기간 계산하기</button>
-                <div id="calculation-help" style="display: none;">AI가 입력된 기간을 바탕으로 총 사용기간과 잔여기간을 정밀하게 계산합니다.</div>
-            </section>
-
-            <section class="calc-section simulation-section">
-                <h2>AI 잔여기간 모의계산</h2>
-                
-                <div id="remainingPeriodResult" style="display: none;">
-                    <div class="info-note">
-                        <p><strong>💡 AI 안내:</strong> AI 계산 결과는 참고용이며, 실제 승인은 관련 기관의 심사를 통해 결정됩니다.</p>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="simulationStartDate">예상 시작일 (AI 모의계산용)</label>
-                    <input type="date" id="simulationStartDate" aria-describedby="simulation-help">
-                    <div id="simulation-help" style="font-size: 12px; color: #718096; margin-top: 5px;">AI가 잔여기간을 분석하여 향후 육아휴직 계획을 스마트하게 시뮬레이션합니다.</div>
-                </div>
-                
-                <button type="button" class="calc-btn secondary" onclick="calculateSimulation()">🤖 AI 잔여기간 모의계산</button>
-            </section>
-
-            <!-- 결과 섹션 -->
-            <section class="result-container" id="resultContainer" role="region" aria-labelledby="result-title">
-                <h2 id="result-title" style="display: none;">AI 계산 결과</h2>
-                <div class="result-summary">
-                    <div class="result-card">
-                        <h3>총 사용기간</h3>
-                        <div class="value" id="totalPeriod" aria-live="polite">0개월</div>
-                    </div>
-                    <div class="result-card">
-                        <h3>AI 잔여기간 분석</h3>
-                        <div class="value" id="remainingSummary" style="font-size: 18px; line-height: 1.4;" aria-live="polite">-</div>
-                    </div>
-                </div>
-
-                <div class="info-note">
-                    <p><strong>🤖 AI 안내:</strong> 육아휴직은 최대 1년(12개월)까지 사용 가능하며, 
-                    아빠 육아휴직 등 특별한 경우 1년 6개월(18개월)까지 확장 가능합니다. AI가 이를 자동으로 분석합니다.</p>
-                </div>
-
-                <div id="simulationDetail" style="display: none;">
-                    <h3>🤖 AI 잔여기간 상세 분석</h3>
-                    <div class="detail-box">
-                        <div id="simulationDetailContent" aria-live="polite"></div>
-                    </div>
+                <!-- 서비스 선택 탭 -->
+                <div class="service-tabs">
+                    <button class="service-tab active" data-service="calculators">
+                        🎯 AI스마트노무계산기
+                    </button>
+                    <button class="service-tab" data-service="employment-rules">
+                        📋 AI스마트취업규칙검토
+                    </button>
                 </div>
             </section>
 
-            <!-- 계산 방법 안내 -->
-            <section class="info-box">
-                <h3>🤖 AI 계산 방법 안내</h3>
-                <ul>
-                    <li><strong>AI 개월수 계산:</strong> DATEDIF 함수로 시작일부터 종료일+1까지의 개월수를 AI가 정밀 계산</li>
-                    <li><strong>AI 일수 계산:</strong> 개월수로 나누어 떨어지지 않는 잔여 일수를 AI가 분석</li>
-                    <li><strong>AI 일할계산:</strong> 잔여일수를 해당월 일수로 나누어 소수점을 AI가 정확히 계산</li>
-                    <li><strong>AI 합산기간:</strong> 개월수 + 일할계산값 (소수점 3자리에서 내림)을 AI가 자동 처리</li>
-                    <li><strong>AI 한도 분석:</strong> 총 합산기간이 12개월을 초과하면 AI가 자동으로 "1년 초과" 표시</li>
-                    <li><strong>AI 분할사용:</strong> 육아휴직을 여러 번 나누어 사용한 경우 AI가 회차별로 스마트 분석 (법적으로 3회까지 허용)</li>
-                </ul>
-            </section>
-
-            <!-- 관련 계산기 -->
-            <section class="related-calculators">
-                <h3>🔗 관련 AI 계산기</h3>
+            <!-- 계산기 목록 -->
+            <section id="calculators" class="service-section active">
+                <h2 style="text-align: center; color: #2d3748; margin-bottom: 40px; font-size: 32px;">
+                    🎯 AI스마트노무계산기
+                </h2>
+                
                 <div class="calculator-grid">
-                    <a href="/annual-leave-calculator" class="calculator-card">
-                        <h4>🏖️ AI 연차 계산기</h4>
+                    <!-- 육아휴직 계산기 (완성) -->
+                    <a href="/parental-leave-calculator/" class="calculator-card available">
+                        <h2>🍼 육아휴직 계산기</h2>
+                        <p>육아휴직 사용기간과 잔여기간을 AI가 정확히 계산해드립니다</p>
+                        <ul class="features">
+                            <li>AI 기반 정확한 기간 계산</li>
+                            <li>분할사용 지원 (최대 3회)</li>
+                            <li>실시간 겹침 검증</li>
+                            <li>잔여기간 스마트 계산</li>
+                            <li>1년/1년 6개월 기준 자동 분석</li>
+                        </ul>
+                    </a>
+
+                    <!-- 연차 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>🏖️ 연차 계산기</h2>
                         <p>AI가 연차 발생일수와 잔여 연차를 스마트하게 계산합니다</p>
-                    </a>
-                    <a href="/severance-pay-calculator" class="calculator-card">
-                        <h4>💰 AI 퇴직금 계산기</h4>
+                        <ul class="features">
+                            <li>입사일 기준 AI 연차 분석</li>
+                            <li>사용 연차 스마트 차감</li>
+                            <li>잔여 연차 실시간 확인</li>
+                            <li>연차 사용 최적 계획 수립</li>
+                        </ul>
+                    </div>
+
+                    <!-- 퇴직금 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>💰 퇴직금 계산기</h2>
                         <p>AI가 퇴직금과 퇴직소득세를 정밀하게 계산합니다</p>
-                    </a>
-                    <a href="/unemployment-benefit-calculator" class="calculator-card">
-                        <h4>📋 AI 실업급여 계산기</h4>
+                        <ul class="features">
+                            <li>AI 기반 정확한 퇴직금 계산</li>
+                            <li>퇴직소득세 스마트 계산</li>
+                            <li>실수령액 정밀 분석</li>
+                            <li>AI 세액 절세 가이드</li>
+                        </ul>
+                    </div>
+
+                    <!-- 실업급여 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>📋 실업급여 계산기</h2>
                         <p>AI가 실업급여 수급기간과 금액을 스마트하게 계산합니다</p>
+                        <ul class="features">
+                            <li>AI 수급 자격 스마트 판단</li>
+                            <li>일일 지급액 정밀 계산</li>
+                            <li>총 수급기간 AI 분석</li>
+                            <li>스마트 신청 절차 가이드</li>
+                        </ul>
+                    </div>
+
+                    <!-- 출산휴가 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>🤱 출산휴가 계산기</h2>
+                        <p>AI가 출산전후휴가 기간과 급여를 정확히 계산합니다</p>
+                        <ul class="features">
+                            <li>AI 출산전후휴가 기간 분석</li>
+                            <li>출산급여 스마트 계산</li>
+                            <li>배우자 출산휴가 AI 분석</li>
+                            <li>스마트 신청서류 가이드</li>
+                        </ul>
+                    </div>
+
+                    <!-- 근로시간 계산기 (예정) -->
+                    <div class="calculator-card coming-soon">
+                        <h2>⏰ 근로시간 계산기</h2>
+                        <p>AI가 근로시간과 연장근로수당을 스마트하게 계산합니다</p>
+                        <ul class="features">
+                            <li>AI 근로시간 정밀 분석</li>
+                            <li>연장/야간/휴일근로 스마트 구분</li>
+                            <li>수당 AI 자동 계산</li>
+                            <li>근로기준법 AI 준수 확인</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 취업규칙검토 섹션 -->
+            <section id="employment-rules" class="service-section">
+                <h2 style="text-align: center; color: #2d3748; margin-bottom: 40px; font-size: 32px;">
+                    📋 AI스마트취업규칙검토
+                </h2>
+                
+                <div class="calculator-grid">
+                    <!-- AI 취업규칙 분석도구 -->
+                    <a href="/employment-rules-analyzer/" class="employment-rules-card">
+                        <h2>📋 AI 취업규칙 분석도구</h2>
+                        <p>AI가 취업규칙 전문을 분석하여 법령 준수 여부와 개선사항을 제안합니다</p>
+                        <ul class="features">
+                            <li>AI 기반 전문 분석 엔진</li>
+                            <li>법령 위반 사항 자동 탐지</li>
+                            <li>개선사항 우선순위 제시</li>
+                            <li>Excel/PDF 보고서 생성</li>
+                            <li>업종별 맞춤 분석</li>
+                        </ul>
                     </a>
-                    <a href="/maternity-leave-calculator" class="calculator-card">
-                        <h4>🤱 AI 출산휴가 계산기</h4>
-                        <p>AI가 출산전후휴가 기간을 정확히 계산합니다</p>
+
+                    <!-- AI 법령 준수 체크리스트 -->
+                    <a href="/employment-rules-checklist/" class="employment-rules-card">
+                        <h2>✅ AI 법령 준수 체크리스트</h2>
+                        <p>AI가 생성한 맞춤형 체크리스트로 주요 노동법령 준수사항을 점검하세요</p>
+                        <ul class="features">
+                            <li>AI 맞춤형 체크리스트 생성</li>
+                            <li>실시간 준수율 분석</li>
+                            <li>법령별 카테고리 분류</li>
+                            <li>위험도 기반 우선순위</li>
+                            <li>개선 로드맵 제공</li>
+                        </ul>
+                    </a>
+
+                    <!-- AI 위반사항 진단 -->
+                    <a href="/employment-rules-diagnosis/" class="employment-rules-card">
+                        <h2>⚠️ AI 위반사항 진단</h2>
+                        <p>현행 취업규칙의 잠재적 위험요소를 AI가 진단하고 대응방안을 제시합니다</p>
+                        <ul class="features">
+                            <li>AI 위험도 분석 시스템</li>
+                            <li>잠재적 법적 리스크 탐지</li>
+                            <li>즉시 조치 항목 식별</li>
+                            <li>단계별 개선 계획 수립</li>
+                            <li>예방적 컴플라이언스 가이드</li>
+                        </ul>
                     </a>
                 </div>
             </section>
-        </article>
+
+            <!-- 통계 섹션 -->
+            <section class="stats-section" id="about">
+                <h2 style="color: #2d3748; margin-bottom: 20px;">💎 왜 AI노무사인가요?</h2>
+                <p style="color: #718096; font-size: 18px;">AI 기술 기반의 정확하고 빠른 계산과 분석으로 노무업무를 혁신합니다</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>AI 무료 서비스</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>언제든 AI 상담</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>AI 분석 정확도</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>스마트</h3>
+                        <p>AI 반응형 지원</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- 푸터 -->
@@ -209,19 +542,51 @@
                 <a href="/privacy">개인정보처리방침</a>
                 <a href="/terms">이용약관</a>
                 <a href="/contact">문의하기</a>
-                <a href="/sitemap">사이트맵</a>
             </nav>
             <div class="footer-info">
                 <p>© 2025 AI노무사. All rights reserved.</p>
-                <p>본 AI계산기는 참고용으로 제공되며, 실제 법적 효력과는 차이가 있을 수 있습니다.</p>
-                <p>정확한 정보는 관련 기관에 문의하시기 바랍니다.</p>
+                <p>본 AI서비스는 참고용으로 제공되며, 실제 법적 효력과는 차이가 있을 수 있습니다.</p>
+                <p>정확한 정보는 관련 기관 또는 전문가에게 문의하시기 바랍니다.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="/js/common.js"></script>
-    <script src="/js/ui-components.js"></script>
-    <script src="/js/calculators/parental-leave.js"></script>
+    <script>
+        // 서비스 탭 전환 기능
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceTabs = document.querySelectorAll('.service-tab');
+            const serviceSections = document.querySelectorAll('.service-section');
+            
+            serviceTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetService = tab.dataset.service;
+                    
+                    // 탭 활성화 상태 변경
+                    serviceTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // 섹션 전환
+                    serviceSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // 약간의 지연 후 새 섹션 표시 (부드러운 전환)
+                    setTimeout(() => {
+                        const targetSection = document.getElementById(targetService);
+                        if (targetSection) {
+                            targetSection.classList.add('active');
+                        }
+                    }, 150);
+                    
+                    // 분석 추적
+                    if (typeof calculatorPlatform !== 'undefined') {
+                        calculatorPlatform.trackEvent('service_switch', 'navigation', targetService);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
